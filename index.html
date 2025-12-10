@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curiosidades del Deporte</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .subtitulo {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Curiosidad del día 🏅</h1>
+
+<div class="card">
+    <h2 id="curiosidad">Cargando curiosidad...</h2>
+</div>
+
+<div class="card">
+    <h2 class="subtitulo">Otras curiosidades</h2>
+    <ul id="listaCuriosidades">
+        <li>Curiosidad 1...</li>
+        <li>Curiosidad 2...</li>
+        <li>Curiosidad 3...</li>
+    </ul>
+</div>
+
+<script>
+// Lista de curiosidades
+const curiosidades = [
+    "El balón de baloncesto profesional pesa entre 567 y 650 gramos.",
+    "El sprint más rápido registrado en fútbol fue de Kylian Mbappé con 38 km/h.",
+    "El voleibol fue inventado en 1895 como un deporte de bajo impacto.",
+    "La pelota de tenis antes de 1986 era negra.",
+    "Un partido de béisbol no tiene límite de tiempo."
+];
+
+// Mostrar una curiosidad al azar
+const curiosidad = curiosidades[Math.floor(Math.random() * curiosidades.length)];
+document.getElementById("curiosidad").innerText = curiosidad;
+
+// Mostrar la lista completa de curiosidades en la sección "Otras curiosidades"
+const lista = document.getElementById("listaCuriosidades");
+lista.innerHTML = "";
+curiosidades.forEach((c, index) => {
+    lista.innerHTML += `<li>${c}</li>`;
+});
+</script>
+
+</body>
+</html>
